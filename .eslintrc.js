@@ -22,6 +22,7 @@ module.exports = {
         "ecmaVersion": 12,
         "project": "./tsconfig.eslint.json",
         "sourceType": "module",
+        tsconfigRootDir: __dirname,
     },
     "plugins": [
         "react",

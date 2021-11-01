@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React, { VFC } from 'react';
 import './Banner.css';
 
-const Banner: FC = () => (
+const Banner: VFC = () => (
   <div className="banner">
     <h1>Hello I am Banner</h1>
   </div>

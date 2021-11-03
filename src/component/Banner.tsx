@@ -1,10 +1,29 @@
-import React, { VFC } from 'react';
+import { Button } from '@material-ui/core';
+import React, { VFC, useState } from 'react';
 import './Banner.css';
 
-const Banner: VFC = () => (
-  <div className="banner">
-    <h1>Hello I am Banner</h1>
-  </div>
-);
+const Banner: VFC = () => {
+  const [showSearch, setShowSearch] = useState(false);
+
+  return (
+    <div className="banner">
+      <div className="banner__search">
+        {showSearch}
+        <Button
+          onClick={() => setShowSearch(!showSearch)}
+          variant="outlined"
+          className="bunner__searchButton"
+        >
+          日付を探す
+        </Button>
+      </div>
+      <div className="banner__info">
+        <h1>次はどこへ行こう？より柔軟な検索で、広がる旅の可能性。</h1>
+        <h5>さぁ探しにいこう</h5>
+        <Button variant="outlined">柔軟な検索を試してみる</Button>
+      </div>
+    </div>
+  );
+};
 
 export default Banner;

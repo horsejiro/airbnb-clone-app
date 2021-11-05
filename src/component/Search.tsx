@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-no-bind */
-import moment from 'moment';
+import { Moment } from 'moment';
 import React, { VFC, useState } from 'react';
 import { DateRangePicker } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
@@ -10,25 +9,10 @@ const Search: VFC = () => {
   const [startDate, setStartDate] = useState<moment.Moment | null>(null);
   const [endDate, setEndDate] = useState<moment.Moment | null>(null);
 
-  const selectionRange = {
-    startDate,
-    endDate,
-    key: 'selection',
-  };
-
-  function handleSelect(ranges: {
-    selection: {
-      startDate: React.SetStateAction<moment.Moment | null>;
-      endDate: React.SetStateAction<moment.Moment | null>;
-    };
-  }) {
-    setStartDate(ranges.selection.startDate);
-    setEndDate(ranges.selection.endDate);
-  }
-
+    function 
   return (
-    <div className="search">
-      <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
+    <div className='search'>
+        <DateRangePicker/>
     </div>
   );
 };

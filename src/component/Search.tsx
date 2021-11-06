@@ -9,10 +9,15 @@ const Search: VFC = () => {
   const [startDate, setStartDate] = useState<moment.Moment | null>(null);
   const [endDate, setEndDate] = useState<moment.Moment | null>(null);
 
-    function 
+  type selectionRange = {
+    startDate: startDate;
+    endDate: endDate;
+    key: 'selection';
+  };
+
   return (
-    <div className='search'>
-        <DateRangePicker/>
+    <div className="search">
+      <DateRangePicker />
     </div>
   );
 };

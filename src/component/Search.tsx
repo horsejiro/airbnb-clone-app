@@ -1,23 +1,32 @@
-import { Moment } from 'moment';
-import React, { VFC, useState } from 'react';
-import { DateRangePicker } from 'react-date-range';
-import 'react-date-range/dist/styles.css';
-import 'react-date-range/dist/theme/default.css';
-import './Search.css';
+import React, { useState } from 'react';
+import moment from 'moment';
+import { DateRangePicker } from 'react-dates';
 
-const Search: VFC = () => {
+import 'moment/locale/ja';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
+
+const Search: React.FC = () => {
   const [startDate, setStartDate] = useState<moment.Moment | null>(null);
   const [endDate, setEndDate] = useState<moment.Moment | null>(null);
-
-  type selectionRange = {
-    startDate: startDate;
-    endDate: endDate;
-    key: 'selection';
-  };
+  const [focusedInput, setFocusedInput] = useState<
+    'startDate' | 'endDate' | null
+  >(null);
 
   return (
     <div className="search">
-      <DateRangePicker />
+      <DateRangePicker
+        startDate={startDate}
+        startDateId="startDateId"
+        endDate={endDate}
+        endDateId="endDateId"
+        focusedInput={focusedInput}
+        onFocusChange={setFocusedInput}
+        onDatesChange={(selectedDates) => {
+          setStartDate(selectedDates.startDate);
+          setEndDate(selectedDates.endDate);
+        }}
+      />
     </div>
   );
 };

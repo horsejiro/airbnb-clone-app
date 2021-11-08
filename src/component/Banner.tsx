@@ -1,6 +1,7 @@
 import { Button } from '@material-ui/core';
 import React, { VFC, useState } from 'react';
 import './Banner.css';
+import Search from './Search';
 
 const Banner: VFC = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -8,7 +9,7 @@ const Banner: VFC = () => {
   return (
     <div className="banner">
       <div className="banner__search">
-        {showSearch}
+        {showSearch && <Search />}
         <Button
           onClick={() => setShowSearch(!showSearch)}
           variant="outlined"

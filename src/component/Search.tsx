@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import moment from 'moment';
+import './Search.css';
 import { DateRangePicker } from 'react-dates';
 import 'moment/locale/ja';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
+import PeopleIcon from '@material-ui/icons/People';
+import { Button } from '@material-ui/core';
 
 const Search: React.FC = () => {
   const [startDate, setStartDate] = useState<moment.Moment | null>(null);
@@ -26,6 +29,12 @@ const Search: React.FC = () => {
           setEndDate(selectedDates.endDate);
         }}
       />
+      <h2>
+        人数
+        <PeopleIcon />
+      </h2>
+      <input min={0} defaultValue={2} type="number" />
+      <Button> 検索 </Button>
     </div>
   );
 };

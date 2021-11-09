@@ -15,7 +15,7 @@ const Banner: VFC = () => {
           variant="outlined"
           className="bunner__searchButton"
         >
-          日付を探す
+          {showSearch ? '隠す' : '日付を探す'}
         </Button>
       </div>
       <div className="banner__info">

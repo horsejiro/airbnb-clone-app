@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
 import moment from 'moment';
 import './Search.css';
 import { DateRangePicker } from 'react-dates';
@@ -8,7 +8,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import PeopleIcon from '@material-ui/icons/People';
 import { Button } from '@material-ui/core';
 
-const Search: React.FC = () => {
+const Search: FC = () => {
   const [startDate, setStartDate] = useState<moment.Moment | null>(null);
   const [endDate, setEndDate] = useState<moment.Moment | null>(null);
   const [focusedInput, setFocusedInput] = useState<
@@ -30,7 +30,7 @@ const Search: React.FC = () => {
         }}
       />
       <h2>
-        人数
+        ゲスト数を入力
         <PeopleIcon />
       </h2>
       <input min={0} defaultValue={2} type="number" />

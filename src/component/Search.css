@@ -14,11 +14,12 @@
   background-color: white;
   position: absolute;
   left: 0;
-  top: 380px;
+  top: 350px;
 }
 
 .search > input {
-  width: 539;
+  font-size: 20px;
+  width: 539px;
   padding: 20px;
   position: absolute;
   left: 0;

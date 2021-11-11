@@ -1,6 +1,7 @@
 import React, { VFC } from 'react';
 import './.Card.css';
 
+const imgSrc = [];
 type CardDetail = {
   src: any;
   title: string;

@@ -1,28 +1,29 @@
-import React, { VFC } from 'react';
+import React, { Props, VFC } from 'react';
 import './.Card.css';
 
-const imgSrc = [];
-type CardDetail = {
-  src: any;
+export type CardDetails = {
+  src: string;
   title: string;
-  description: string;
-  price: number;
+  descripiton: string;
 };
 
-const Card: VFC = () => {
-  const cardDetail: CardDetail = {
-    src: ,
-  };
+type Props = {
+  cardDetails: CardDetails[];
+};
+const Card: VFC<Props> = (props) => {
+  const { cardDetails } = props;
 
   return (
-    <div className="card">
-      <img src={src} alt="" />
-      <div className="card__info">
-        <h2>{title}</h2>
-        <h4>{description}</h4>
-        <h3>{price}</h3>
+    <>
+      <div className="card">
+        {}
+        <img src={src} alt="" />
+        <div className="card__info">
+          <h2>{title}</h2>
+          <h4>{descriotion}</h4>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

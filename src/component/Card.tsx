@@ -6,6 +6,7 @@ export type CardDetails = {
   src: string;
   title: string;
   description: string;
+  price?: string;
 };
 
 type Props = {
@@ -23,6 +24,7 @@ const Card: VFC<Props> = (props) => {
           <div className="card__info">
             <h2>{cardDetail.title}</h2>
             <h4>{cardDetail.description}</h4>
+            <h3>{cardDetail.price}</h3>
           </div>
         </div>
       ))}

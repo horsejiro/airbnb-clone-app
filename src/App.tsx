@@ -9,7 +9,10 @@ const App: FC = () => (
   <div className="App">
     <Header />
     <Home />
+    <SearchPage />
+
     <Footer />
+    <Router />
   </div>
 );
 

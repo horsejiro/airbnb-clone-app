@@ -7,12 +7,15 @@ import Footer from './component/Footer';
 
 const App: FC = () => (
   <div className="App">
-    <Header />
-    <Home />
-    <SearchPage />
-
-    <Footer />
-    <Router />
+    <Router>
+      <Header />
+      <Switch>
+        <Route path="">
+          <Home />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
   </div>
 );
 

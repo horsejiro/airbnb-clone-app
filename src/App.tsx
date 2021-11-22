@@ -14,10 +14,11 @@ const App: FC = () => (
         <Route path="/search">
           <SearchPage />
         </Route>
-        <Route path="">
+        <Route path="/">
           <Home />
         </Route>
       </Switch>
+
       <Footer />
     </Router>
   </div>

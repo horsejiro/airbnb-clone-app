@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React, { VFC } from 'react';
 import './Card.css';
 
@@ -19,7 +22,7 @@ const Card: VFC<Props> = (props) => {
   return (
     <>
       {cardDetails.map((cardDetail) => (
-        <div className="card">
+        <div className="card" key={cardDetail.id}>
           <img src={cardDetail.src} alt="" />
           <div className="card__info">
             <h2>{cardDetail.title}</h2>

@@ -1,7 +1,7 @@
 import React, { VFC } from 'react';
 import './SearchPage.css';
 import { Button } from '@material-ui/core';
-import { SearchResult } from './SearchResult';
+import SearchResult from './SearchResult';
 
 const SearchPage: VFC = () => (
   <div className="searchPage">
@@ -14,7 +14,7 @@ const SearchPage: VFC = () => (
       <Button variant="outlined">部屋とベッド</Button>
       <Button variant="outlined">絞る</Button>
     </div>
-    <SearchResult />
+    <SearchResult searchResultDetails={[]} />
   </div>
 );
 

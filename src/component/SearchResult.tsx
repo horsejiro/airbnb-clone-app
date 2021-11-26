@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { FavoriteBorder, FavoriteBorderIcon } from '@material-ui/icons';
 import React, { VFC } from 'react';
 import './SearchResult.css';
 
@@ -23,7 +24,10 @@ const SearchResult: VFC<Props> = (props) => {
     <>
       <div className="searchResult">
         {searchResultDetails.map((searchResultDetail) => (
-          <img src={searchResultDetail.image} alt="" />
+          <>
+            <img src={searchResultDetail.image} alt="" />
+            <FavoriteBorderIcon className="search__heart" />
+          </>
         ))}
       </div>
     </>

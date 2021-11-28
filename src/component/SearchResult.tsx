@@ -11,6 +11,7 @@ export type SearchResultDetails = {
   star: string;
   price: number;
   total: number;
+  description: string;
 };
 
 type Props = {
@@ -27,6 +28,15 @@ const SearchResult: VFC<Props> = (props) => {
           <>
             <img src={searchResultDetail.image} alt="" />
             <FavoriteBorderIcon className="search__heart" />
+            <div className="searchResult__info">
+              <div className="searchResult__infoTop">
+                <p>{searchResultDetail.location}</p>
+                <h3>{searchResultDetail.title}</h3>
+                <p>___</p>
+                <p>{searchResultDetail.description}</p>
+              </div>
+              <div className="searchResult__infoBottom" />
+            </div>
           </>
         ))}
       </div>

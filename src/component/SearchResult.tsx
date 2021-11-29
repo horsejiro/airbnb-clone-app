@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import StarIcon from '@material-ui/icons/Star';
 import React, { VFC } from 'react';
 import './SearchResult.css';
 
@@ -8,9 +9,9 @@ export type SearchResultDetails = {
   image: string;
   location: string;
   title: string;
-  star: string;
-  price: number;
-  total: number;
+  star: number;
+  price: string;
+  total: string;
   description: string;
 };
 
@@ -22,25 +23,34 @@ const SearchResult: VFC<Props> = (props) => {
   const { searchResultDetails } = props;
 
   return (
-    <>
-      <div className="searchResult">
-        {searchResultDetails.map((searchResultDetail) => (
-          <>
-            <img src={searchResultDetail.image} alt="" />
-            <FavoriteBorderIcon className="search__heart" />
-            <div className="searchResult__info">
-              <div className="searchResult__infoTop">
-                <p>{searchResultDetail.location}</p>
-                <h3>{searchResultDetail.title}</h3>
-                <p>___</p>
-                <p>{searchResultDetail.description}</p>
-              </div>
-              <div className="searchResult__infoBottom" />
+    <div className="searchResult">
+      {searchResultDetails.map((searchResultDetail) => (
+        <>
+          <img src={searchResultDetail.image} alt="" />
+          <FavoriteBorderIcon className="search__heart" />
+          <div className="searchResult__info">
+            <div className="searchResult__infoTop">
+              <p>{searchResultDetail.location}</p>
+              <h3>{searchResultDetail.title}</h3>
+              <p>___</p>
+              <p>{searchResultDetail.description}</p>
             </div>
-          </>
-        ))}
-      </div>
-    </>
+            <div className="searchResult__infoBottom">
+              <div className="searchResult__stars">
+                <StarIcon className="searchResult__star" />
+                <p>
+                  <strong>{searchResultDetail.star}</strong>
+                </p>
+              </div>
+            </div>
+            <div className="searchResult__price">
+              <h2>{searchResultDetail.price}</h2>
+              <p>{searchResultDetail.total}</p>
+            </div>
+          </div>
+        </>
+      ))}
+    </div>
   );
 };
 

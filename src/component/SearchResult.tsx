@@ -23,34 +23,36 @@ const SearchResult: VFC<Props> = (props) => {
   const { searchResultDetails } = props;
 
   return (
-    <div className="searchResult">
+    <>
       {searchResultDetails.map((searchResultDetail) => (
-        <>
-          <img src={searchResultDetail.image} alt="" />
-          <FavoriteBorderIcon className="search__heart" />
-          <div className="searchResult__info">
-            <div className="searchResult__infoTop">
-              <p>{searchResultDetail.location}</p>
-              <h3>{searchResultDetail.title}</h3>
-              <p>___</p>
-              <p>{searchResultDetail.description}</p>
-            </div>
-            <div className="searchResult__infoBottom">
-              <div className="searchResult__stars">
-                <StarIcon className="searchResult__star" />
-                <p>
-                  <strong>{searchResultDetail.star}</strong>
-                </p>
+        <div className="searchResult">
+          <>
+            <img src={searchResultDetail.image} alt="" />
+            <FavoriteBorderIcon className="searchResult__heart" />
+            <div className="searchResult__info">
+              <div className="searchResult__infoTop">
+                <p>{searchResultDetail.location}</p>
+                <h3>{searchResultDetail.title}</h3>
+                <p>___</p>
+                <p>{searchResultDetail.description}</p>
+              </div>
+              <div className="searchResult__infoBottom">
+                <div className="searchResult__stars">
+                  <StarIcon className="searchResult__star" />
+                  <p>
+                    <strong>{searchResultDetail.star}</strong>
+                  </p>
+                </div>
+              </div>
+              <div className="searchResult__price">
+                <h2>{searchResultDetail.price}</h2>
+                <p>{searchResultDetail.total}</p>
               </div>
             </div>
-            <div className="searchResult__price">
-              <h2>{searchResultDetail.price}</h2>
-              <p>{searchResultDetail.total}</p>
-            </div>
-          </div>
-        </>
+          </>
+        </div>
       ))}
-    </div>
+    </>
   );
 };
 

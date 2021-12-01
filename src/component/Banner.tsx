@@ -3,11 +3,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Button } from '@material-ui/core';
 import React, { VFC, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './Banner.css';
 import Search from './Search';
 
 const Banner: VFC = () => {
-  const [showSearch, setShowSearch] = useState(false);
+  const history = useHistory();
+  const [showSearch, setShowSearch] = useState<boolean>(false);
 
   return (
     <div className="banner">

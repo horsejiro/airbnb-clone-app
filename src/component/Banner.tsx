@@ -10,6 +10,9 @@ import Search from './Search';
 const Banner: VFC = () => {
   const history = useHistory();
   const [showSearch, setShowSearch] = useState<boolean>(false);
+  const toSearch = () => {
+    history.push('./search');
+  };
 
   return (
     <div className="banner">
@@ -26,7 +29,9 @@ const Banner: VFC = () => {
       <div className="banner__info">
         <h1>次はどこへ行こう？より柔軟な検索で、広がる旅の可能性。</h1>
         <h5>さぁ探しにいこう</h5>
-        <Button variant="outlined">柔軟な検索を試してみる</Button>
+        <Button onClick={toSearch} variant="outlined">
+          柔軟な検索を試してみる
+        </Button>
       </div>
     </div>
   );

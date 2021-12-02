@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React, { useState, FC } from 'react';
@@ -9,6 +10,7 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import PeopleIcon from '@material-ui/icons/People';
 import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 const Search: FC = () => {
   const [startDate, setStartDate] = useState<moment.Moment | null>(null);
@@ -16,6 +18,10 @@ const Search: FC = () => {
   const [focusedInput, setFocusedInput] = useState<
     'startDate' | 'endDate' | null
   >(null);
+  const history = useHistory();
+  const toSearch = () => {
+    history.push('./search');
+  };
 
   return (
     <div className="search">
@@ -36,7 +42,7 @@ const Search: FC = () => {
         <PeopleIcon />
       </h2>
       <input min={0} defaultValue={2} type="number" />
-      <Button> 検索 </Button>
+      <Button onClick={toSearch}> 検索 </Button>
     </div>
   );
 };

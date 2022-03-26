@@ -9,7 +9,7 @@ export type CardDetails = {
   src: string;
   title: string;
   description: string;
-  price?: number;
+  price?: string;
 };
 
 type Props = {

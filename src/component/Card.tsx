@@ -4,14 +4,6 @@
 import React, { VFC } from 'react';
 import './Card.css';
 
-export type CardDetails = {
-  id?: number;
-  src: string;
-  title: string;
-  description: string;
-  price?: string;
-};
-
 type Props = {
   cardDetails: CardDetails[];
 };

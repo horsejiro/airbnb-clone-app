@@ -12,10 +12,6 @@ export type CardDetails = {
   price?: string;
 };
 
-type Props = {
-  cardDetails: CardDetails[];
-};
-
 const Card: VFC<Props> = (props) => {
   const { cardDetails } = props;
 

@@ -7,7 +7,12 @@ import { useHistory } from 'react-router-dom';
 import './Banner.css';
 import Search from './Search';
 
-
+const Banner: VFC = () => {
+  const history = useHistory();
+  const [showSearch, setShowSearch] = useState<boolean>(false);
+  const toSearch = () => {
+    history.push('./search');
+  };
 
   return (
     <div className="banner">

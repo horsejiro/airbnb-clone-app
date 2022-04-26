@@ -15,7 +15,7 @@ const Banner: VFC = () => {
   };
 
   return (
-
+    <div className="banner">
       <div className="banner__search">
         {showSearch && <Search />}
         <Button

@@ -11,7 +11,7 @@ const Banner: VFC = () => {
   const history = useHistory();
   const [showSearch, setShowSearch] = useState<boolean>(false);
   const toSearch = () => {
-    history.push(');
+    history.push('./search');
   };
 
   return (

@@ -10,7 +10,9 @@ import Search from './Search';
 const Banner: VFC = () => {
   const history = useHistory();
   const [showSearch, setShowSearch] = useState<boolean>(false);
-  const toSearch = () => {};
+  const toSearch = () => {
+    history.push('./search');
+  };
 
   return (
     <div className="banner">

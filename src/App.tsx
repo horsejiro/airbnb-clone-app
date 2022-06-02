@@ -11,7 +11,9 @@ const App: FC = () => (
     <Router>
       <Header />
       <Switch>
-        <Route path="/search" />
+        <Route path="/search">
+          <SearchPage />
+        </Route>
         <Route path="/">
           <Home />
         </Route>

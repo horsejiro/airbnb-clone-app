@@ -18,7 +18,6 @@ const App: FC = () => (
           <Home />
         </Route>
       </Switch>
-
       <Footer />
     </Router>
   </div>
